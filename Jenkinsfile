@@ -16,7 +16,7 @@ pipeline {
                 bat 'dotnet build %WORKSPACE%\\DockerConsoleApp.sln /p:PublishProfile=" %WORKSPACE%\\DockerConsoleApp\\Properties\\PublishProfiles\\FolderProfile.pubxml" /p:Platform="Any CPU" /p:DeployOnBuild=true /m'
             }
         }
-        stage 'Docker build' {
+        stage ("Docker build") {
           steps {
              docker.build('demo')
           }
