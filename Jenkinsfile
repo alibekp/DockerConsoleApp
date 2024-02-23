@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
            steps {
-               build -t sample-alibek-image -f Dockerfile .
+               'docker build -t sample-alibek-image -f Dockerfile .'
             }
         }
     }
