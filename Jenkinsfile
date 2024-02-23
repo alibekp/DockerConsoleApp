@@ -3,9 +3,7 @@ pipeline {
 
     stages {
         stage('Build') {
-            steps {
-                sh 'make'
-            }
+            echo 'Yo niggaz'
         }
     }
 }
