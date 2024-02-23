@@ -18,7 +18,12 @@ pipeline {
         }
         stage ("Docker build") {
           steps {
-                    bat 'docker build -t dockeralibek/library:latest .'
+                    bat 'docker build -t sample-thiago-image:latest .'
+            }
+        }
+         stage ("Docker container") {
+          steps {
+                    bat 'docker create --name sample-thiago-container sample-thiago-image'
             }
         }
     }
