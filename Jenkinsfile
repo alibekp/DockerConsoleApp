@@ -18,7 +18,7 @@ pipeline {
         }
         stage ("Docker build") {
           steps {
-             docker build . -t ${name}
+            docker build -t sample-alibek-image -f Dockerfile .
           }
         }
     }
