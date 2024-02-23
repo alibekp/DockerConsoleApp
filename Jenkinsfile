@@ -18,7 +18,7 @@ pipeline {
         }
         stage ("Docker build") {
           steps {
-             bat 'docker build -t sample-alibek-image -f Dockerfile .'
+             bat 'docker build -t dj sound -f Dockerfile .'
           }
         }
     }
