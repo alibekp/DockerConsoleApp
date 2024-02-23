@@ -20,6 +20,7 @@ pipeline {
           steps {
             script {
                     'bat docker build -t dockeralibek/library -f Dockerfile .'
+                    'docker push'
                 }
             }
         }
