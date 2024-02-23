@@ -19,7 +19,7 @@ pipeline {
         stage ("Docker build") {
           steps {
             script {
-                    bat "docker build -t dockeralibek/library:tag123"
+                    bat "docker build -t dockeralibek/library:tag123 ."
                 }
             }
         }
