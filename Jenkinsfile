@@ -18,7 +18,7 @@ pipeline {
         }
         stage ("Docker build") {
           steps {
-             docker.build('demo')
+             docker build . -t ${name}
           }
         }
     }
