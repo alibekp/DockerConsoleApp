@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
            steps {
-               app = docker.build("getintodevops/hellonode")
+               build -t sample-alibek-image -f Dockerfile .
             }
         }
     }
