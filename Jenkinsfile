@@ -19,7 +19,7 @@ pipeline {
         stage ("Docker build") {
           steps {
             script {
-                    bat "docker build -t sample-alibek-image"
+                    bat "docker build -t sample-alibek-image ."
                 }
             }
         }
