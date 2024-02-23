@@ -23,7 +23,7 @@ pipeline {
         }
         stage ("Docker push") {
           steps {
-                    bat docker push -t dockeralibek/library:latest'
+                    bat 'docker push -t dockeralibek/library:latest'
             }
         }
     }
