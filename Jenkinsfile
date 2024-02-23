@@ -16,5 +16,10 @@ pipeline {
                 bat 'dotnet build %WORKSPACE%\\DockerConsoleApp.sln /p:PublishProfile=" %WORKSPACE%\\DockerConsoleApp\\Properties\\PublishProfiles\\FolderProfile.pubxml" /p:Platform="Any CPU" /p:DeployOnBuild=true /m'
             }
         }
+        stage('Build on Docker') {
+           steps {
+               sh 'docker build -t sample-alibek-image -f Dockerfile .'
+            }
+        }
     }
 }
