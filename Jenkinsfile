@@ -19,7 +19,7 @@ pipeline {
         stage ("Docker build") {
           steps {
             script {
-                    bat "bat "docker build -t sample-alibek-image -f Dockerfile ."
+                    bat "bat docker build -t sample-alibek-image -f Dockerfile ."
                     bat "docker push"
                 }
             }
