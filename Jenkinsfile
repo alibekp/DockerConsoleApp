@@ -18,7 +18,12 @@ pipeline {
         }
         stage ("Docker build") {
           steps {
-             bat 'docker build -t djsound -f Dockerfile .'
+             bat 'docker build -t sample-alibek-image -f Dockerfile .'
+          }
+        }
+         stage ("Docker push") {
+          steps {
+             bat 'docker create --name sample-alibek-container sample-alibek-image'
           }
         }
     }
