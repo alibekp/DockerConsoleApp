@@ -8,7 +8,9 @@ pipeline {
       }
 stage('Build') {
  steps {
-  bat "msbuild.exe ${workspace}
+ bat "msbuild.exe ${DockerConsoleApp}\\DockerConsoleApp\\DockerConsoleApp.sln /nologo /nr:false  
+                              /p:platform=\"x64\" /p:configuration=\"release\" 
+                              /p:PackageCertificateKeyFile=<path-to-certificate-file>.pfx /t:clean;restore;rebuild"
  }
 }
         stage('Build') {
