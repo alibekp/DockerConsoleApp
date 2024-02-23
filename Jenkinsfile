@@ -19,8 +19,7 @@ pipeline {
         stage ("Docker build") {
           steps {
             script {
-                    'docker build -t dockeralibek/library -f Dockerfile .'
-                    'docker push -a'
+                    bat 'docker build -t dockeralibek/library -f Dockerfile .'
                 }
             }
         }
