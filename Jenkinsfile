@@ -2,7 +2,8 @@ pipeline {
     agent any
 	environment {     
          DOCKERHUB_CREDENTIALS= credentials('dockeralibek-dockerhub')     
-    } 
+       } 
+	stages {
         stage ("Docker build") {
           steps {
                     bat 'docker build -t dockeralibek/library:latest .'
