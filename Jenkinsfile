@@ -1,11 +1,13 @@
-pipeline {
-    agent any
-    stages {
-        stage ("Docker build") {
-          steps {
-		    bat 'cd C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\TestPipeline2\\'  
-                    bat 'docker build -t dockeralibek/library:latest .'
-            }
-        }
-        }
+node {
+    def app
+    stage('Clone repository') {
+        /* Let's make sure we have the repository cloned to our workspace */
+        checkout scm
     }
+    stage('Build image') {
+        /* This builds the actual image; synonymous to
+         * docker build on the command line */
+
+        app = docker.build("getintodevops/hellonode")
+    }
+}
