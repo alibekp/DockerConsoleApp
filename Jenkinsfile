@@ -21,7 +21,12 @@ pipeline {
         }
         stage ("Docker build") {
           steps {
-                    bat 'docker build -t dockeralibek/library:latest .'
+                    bat 'docker build -t dockerimage:latest .'
+            }
+        }
+	    stage ("Docker build") {
+          steps {
+                    bat 'docker create --name dockercontainer dockerimage'
             }
         }
         /*stage('Login to Docker Hub') {      	
