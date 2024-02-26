@@ -4,11 +4,6 @@ pipeline {
          DOCKERHUB_CREDENTIALS= credentials('dockeralibek-dockerhub')     
     } 
     stages {
-        stage('Clone repository') {
-            steps {
-        checkout scm
-            }
-      }
       stage('Build Stage') {
             steps {
                 bat 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\TestPipeline2\\DockerConsoleApp.sln --configuration Release'
