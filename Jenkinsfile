@@ -24,7 +24,7 @@ pipeline {
                     bat 'docker build -t dockeralibek/library:latest .'
             }
         }
-        stage('Login to Docker Hub') {      	
+        */stage('Login to Docker Hub') {      	
             steps {                       	
                 	bat 'echo $DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'                		
 	                echo 'Login Completed'      
@@ -34,6 +34,6 @@ pipeline {
           steps {
                     bat 'docker push dockeralibek/library:latest'
             }
-        }
+        }*/
     }
 }
