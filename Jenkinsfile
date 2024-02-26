@@ -24,7 +24,7 @@ pipeline {
                     bat 'docker build -t dockerimage:latest .'
             }
         }
-	    stage ("Docker build") {
+	    stage ("Docker create") {
           steps {
                     bat 'docker create --name dockercontainer dockerimage'
             }
