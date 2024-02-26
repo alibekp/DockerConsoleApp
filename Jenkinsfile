@@ -31,7 +31,7 @@ pipeline {
         }
 	    stage ("Docker run") {
           steps {
-                    docker run dockerimage
+                    bat 'docker run dockerimage'
             }
         }
         /*stage('Login to Docker Hub') {      	
