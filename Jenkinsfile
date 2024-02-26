@@ -24,9 +24,14 @@ pipeline {
                     bat 'docker build -t dockerimage:latest .'
             }
         }
-	    stage ("Docker create") {
+	 stage ("Docker create") {
           steps {
                     bat 'docker create --name dockercontainer dockerimage'
+            }
+        }
+	    stage ("Docker run") {
+          steps {
+                    docker run dockerimage
             }
         }
         /*stage('Login to Docker Hub') {      	
