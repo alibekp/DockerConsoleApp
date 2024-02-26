@@ -1,8 +1,5 @@
 pipeline {
     agent any
-	environment {     
-         DOCKERHUB_CREDENTIALS= credentials('dockeralibek-dockerhub')     
-    } 
     stages {
       stage('Build Stage') {
             steps {
